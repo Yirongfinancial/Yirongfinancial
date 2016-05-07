@@ -1,0 +1,328 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Wf_main_activity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/wf_title_b" >
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/lkw_return" />
+
+            <TextView
+                style="@style/wf_title_textview"
+                android:text="@string/wf_yirongjinrong" />
+
+            <ImageView
+                style="@style/wf_title_imageview"
+                android:src="@drawable/wf_ic_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/wf_main_textview_shouye"
+                style="@style/wf_shouye_textview" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_alignBottom="@id/wf_main_textview_shouye"
+                android:layout_alignLeft="@id/wf_main_textview_shouye"
+                android:layout_alignRight="@id/wf_main_textview_shouye"
+                android:background="#548B54" />
+        </RelativeLayout>
+
+        <TextView style="@style/wf_hengxian" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="300dp" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:src="@drawable/wf_yirongjinrong_text" />
+
+                <LinearLayout style="@style/wf_item_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_jiaotong"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_jiaotong" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/jiaotongyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zhaoshang"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_zhaoshang" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/zhaoshangyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_pufa"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_pufa" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/pufayinhang" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout style="@style/wf_item_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_jianhang"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_jianhang" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/jiansheyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zhongguo"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_zhongguo" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/zhongguoyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_minsheng"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_minsheng" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/minshengyinhang" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout style="@style/wf_item_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_zhongxin"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_zhongxin" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/zhongxinyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_gongshang"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/jdbk" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/jingdongbaika" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_nongye"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_nongye" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/nongyeyinhang" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout style="@style/wf_item_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_pingan"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_pingan" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/pinganyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_xingye"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_xingye" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/xingyeyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_guangfa"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_guangfa" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/guangfayinhang" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout style="@style/wf_item_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_huaxia"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_huaxia" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/huaxiayinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_shanghai"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_shanghai" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/shanghaiyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_guangda"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_guangda" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/guangdayinhang" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout style="@style/wf_item_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_beijing"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_beijing" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/beijingyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zheshang"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_zheshang" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/zheshangyinhang" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_huaqi"
+                        style="@style/wf_item_vertical" >
+
+                        <ImageView
+                            style="@style/wf_item_imageview"
+                            android:src="@drawable/hwh_huaqi" />
+
+                        <TextView
+                            style="@style/wf_item_textview"
+                            android:text="@string/huaqiyinhang" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView style="@style/wf_hengxian" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

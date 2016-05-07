@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/wf_title_b" >
+
+        <ImageView
+            android:id="@+id/return_but_web"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lkw_return" />
+
+        <TextView
+            style="@style/wf_title_textview"
+            android:text="@string/lkw_title" />
+
+        <ImageView
+            style="@style/wf_title_imageview"
+            android:src="@drawable/wf_ic_item" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/lkw_webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

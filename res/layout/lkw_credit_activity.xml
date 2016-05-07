@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/wf_title_b" >
+
+            <ImageView
+                android:id="@+id/return_but"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lkw_return" />
+
+            <TextView
+                style="@style/wf_title_textview"
+                android:text="@string/lkw_title" />
+
+            <ImageView
+                style="@style/wf_title_imageview"
+                android:src="@drawable/wf_ic_item" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/wf_main_textview_shouye"
+                style="@style/wf_shouye_textview"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_alignBottom="@id/wf_main_textview_shouye"
+                android:layout_alignLeft="@id/wf_main_textview_shouye"
+                android:layout_alignRight="@id/wf_main_textview_shouye"
+                android:background="#548B54" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/mybg_imv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/lkw_mybackground" />
+
+        <TextView style="@style/wf_hengxian" />
+    </LinearLayout>
+
+</LinearLayout>

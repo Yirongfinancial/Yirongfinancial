@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- common -->
+    <!-- common -->
+    <!-- 王飞 -->
+
+
+    <!-- 王飞 -->
+    <!-- 韩文海 -->
+
+    <dimen name="yinhang_jianju">80dp</dimen>
+    <dimen name="yinhang_height">150dp</dimen>
+    <dimen name="yinhang_width">150dp</dimen>
+    <dimen name="yinhang_picture_jianju">45dp</dimen>
+    <!-- 韩文海 -->
+    <!-- 王义升 -->
+    <dimen name="item_textsize">35sp</dimen>
+    <dimen name="item_betton">50dp</dimen>
+    <dimen name="textview_imageview">25dp</dimen>
+
+    <!-- 王义升 -->
+
+
+    <!-- 李柯文 -->
+    <dimen name="homesize">20dp</dimen>
+    <!-- 李柯文 -->
+    <!-- 史跃伟 -->
+    <dimen name="syw_yinhang_jianju">80dp</dimen>
+    <dimen name="syw_yinhang_height">110dp</dimen>
+    <dimen name="syw_yinhang_width">110dp</dimen>
+    <dimen name="syw_yinhang_picture_jianju">45dp</dimen>
+    <!-- 史跃伟 -->
+
+</resources>

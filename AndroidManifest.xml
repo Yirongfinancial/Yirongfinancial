@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.edu.zzti.yirongfinancial.syw"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/wys_app"
+        android:label="@string/wf_app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+
+        <!-- 王飞 -->
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.wf.Wf_shanping_activity"
+            android:label="@string/title_activity_wf_main_activity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.wf.Wf_main_activity"
+            android:label="@string/title_activity_wf_main_activity" >
+        </activity>
+        <!-- 王飞 -->
+        <!-- 史跃伟 -->
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.syw.Syw_networkload_activity"
+            android:label="@string/wf_app_name" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.syw.Syw_networkload_webview" >
+        </activity>
+        <!-- 史跃伟 -->
+        <!-- 韩文海 -->
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.hwh.Hwh_fastcardaccess_activity"
+            android:label="@string/title_activity_hwh_fastcardaccess_activity" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.common.CommonWebView" >
+        </activity>
+        <!-- 韩文海 -->
+        <!-- 王义升 -->
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.wys.Wys_getmoney_activity"
+            android:label="@string/title_activity_wys_getmoney_activity" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.wys.Wys_guangdatie_activity" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.wys.Wys_minshengtie_activity" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.wys.Wys_pingantie_activity" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.wys.Wys_pufatie_activity" >
+        </activity>
+        <!-- 王义升 -->
+        <!-- 李柯文 -->
+
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.lkw.Lkw_credit_activity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.lkw.Lkw_credit_webview_activity"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+
+        <!-- 李柯文 -->
+        <!-- 袁祺隽 -->
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_activity" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_zhongxin" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_zhaoshang" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_beijing" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_guangda" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_huaxia" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_jiaotong" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_minsheng" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_pingan" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_pufa" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_shanghai" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_xingye" >
+        </activity>
+        <activity android:name="com.edu.zzti.yirongfinancial.yqj.Yqj_selectcard_zhongguo" >
+        </activity>
+        <!-- 袁祺隽 -->
+
+    </application>
+
+</manifest>

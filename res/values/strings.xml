@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- common -->
+    <string name="title_activity_wf_main_activity">亿融金融</string>
+    <string name="title_activity_hwh_fastcardaccess_activity">Hwh_fastcardaccess_activity</string>
+    <string name="title_activity_wys_getmoney_activity">Wys_getmoney_activity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_name">亿融金融</string>
+    <!-- common -->
+    <!-- 王飞 -->
+    <string name="wf_app_name">亿融金融</string>
+    <string name="wf_action_settings">Settings</string>
+    <string name="wf_yirongjinrong">亿融金融</string>
+    <string name="wf_kuaikatongdao">快卡通道</string>
+    <string name="wf_yijiantie">一键提额</string>
+    <string name="wf_bankajindu">办卡进度</string>
+    <string name="wf_wangluoxiaodai">网络小贷</string>
+    <string name="wf_guanfangwangzhan">官方网站</string>
+    <string name="wf_jishujiemi">技术解密</string>
+    <string name="wf_zhengxinchaxun">征信查询</string>
+    <string name="wf_gerenzhongxin">个人中心</string>
+    <string name="wf_chanpinjieshao">产品介绍</string>
+    <!-- 王飞 -->
+    <!-- 韩文海 -->
+    <string name="FastCardAccess">快卡通道</string>
+    <string name="jiaotongyinhang">交通银行</string>
+    <string name="zhaoshangyinhang">招商银行</string>
+    <string name="pufayinhang">浦发银行</string>
+    <string name="jiansheyinhang">建设银行</string>
+    <string name="zhongguoyinhang">中国银行</string>
+    <string name="minshengyinhang">民生银行</string>
+    <string name="zhongxinyinhang">中信银行</string>
+    <string name="gongshangyinhang">工商银行</string>
+    <string name="nongyeyinhang">农业银行</string>
+    <string name="pinganyinhang">平安银行</string>
+    <string name="xingyeyinhang">兴业银行</string>
+    <string name="guangfayinhang">广发银行</string>
+    <string name="huaxiayinhang">华夏银行</string>
+    <string name="shanghaiyinhang">上海银行</string>
+    <string name="guangdayinhang">光大银行</string>
+    <string name="beijingyinhang">北京银行</string>
+    <string name="zheshangyinhang">浙商银行</string>
+    <string name="huaqiyinhang">花旗银行</string>
+    <!-- 韩文海 -->
+    <!-- 王义升 -->
+    <string name="gf">广发提额</string>
+    <string name="zs">招商提额</string>
+    <string name="xy">花旗提额</string>
+    <string name="jt">交通提额</string>
+    <string name="zx">中信提额</string>
+    <string name="ms">民生提额</string>
+    <string name="pf">浦发提额</string>
+    <string name="gd">光大提额</string>
+    <string name="pa">平安提额</string>
+    <string name="ny">农业提额</string>
+    <string name="yirongjinrong">一键提额·亿融金融</string>
+    <string name="minshengtie">民生提额·亿融金融</string>
+    <string name="pingantie">平安提额·亿融金融</string>
+    <string name="guangdatie">光大提额·亿融金融</string>
+    <string name="pufatie">浦发提额·亿融金融</string>
+    <string name="nongyetie">农业提额·亿融金融</string>
+    <string name="minshengdianhua">拨打客服(4008208788)</string>
+    <string name="pingandianhua">拨打客服(95511)</string>
+    <string name="guangdadianhua">拨打客服(95595)</string>
+    <string name="pufadianhua">拨打客服(4008208788)</string>
+    <string name="minshengtiedianhua">拨打4006695568 > 按1 (中文服务) >按2 (额度查询调整) > 输入查询密码 > 按2 (临时额度调整) / 按3 (固定额度调整)</string>
+    <string name="pingantiedianhua">拨打95511 > 按2 (信用卡业务) > 输入查询密码并按# > 按3* (临时额度及固定额度申请) > 按1 (临时额度申请) /按2 (固定额度申请)</string>
+    <string name="guangdatiedianhua">拨打95595 > 按1 (自助语音服务) > 输入卡号末四位并按# > 按7 (额度调整) > 输入交易密码并按# > 按1 (申请提升固定额度) / 按2 (申请提升临时额度)</string>
+    <string name="pufatiedianhua">拨打4008208788 > 输入身份证号并按# > 输入查询密码并按# > 按1 (额度调整及账务查询) > 按7 (额度调整) > 按1 (固定额度调整) / 按2 (临时额度调整)</string>
+    <!-- 王义升 -->
+    <!-- 史跃伟 -->
+    <string name="networkload_title">小额贷款-亿融金融</string>
+    <string name="zhongxin">中信圆梦金</string>
+    <string name="lexiang">乐享财智金</string>
+    <string name="pingan">平安普惠</string>
+    <string name="zhifupay">支付宝贷</string>
+    <string name="paipaiload">拍拍贷</string>
+    <string name="youme">你我贷</string>
+    <string name="yiren">宜人贷</string>
+    <string name="pufa">浦发万用金</string>
+    <string name="jianhang">建行龙卡贷</string>
+    <string name="renxing">任性贷</string>
+    <string name="jingd">京东白条</string>
+    <string name="zhaolian">招联好期贷</string>
+
+    <!-- 史跃伟 -->
+
+
+    <!-- 李柯文 -->
+    <string name="lkw_title">征信查询-亿融金融</string>
+    <string name="home">首页</string>
+
+    <!-- 李柯文 -->
+
+    <!-- 袁祺隽-->
+    <string name="jindu">亿融金融-申卡进度</string>
+
+    <!-- 袁祺隽 -->
+
+    <string name="pufa_bank">浦发银行</string>
+    <string name="zhongxin_bank">中信银行</string>
+    <string name="zhaoshang_bank">招商银行</string>
+    <string name="guangda_bank">光大银行</string>
+    <string name="xingye_bank">兴业银行</string>
+    <string name="jiaotong_bank">交通银行</string>
+    <string name="zhongguo_bank">中国银行</string>
+    <string name="pingan_bank">平安银行</string>
+    <string name="huaxia_bank">华夏银行</string>
+    <string name="shanghai_bank">上海银行</string>
+    <string name="beijing_bank">北京银行</string>
+    <string name="minsheng_bank">民生银行</string>
+    <!-- 袁祺隽 -->
+    <string name="jingdongbaika">京东白卡</string>
+
+</resources>
