@@ -6,11 +6,13 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="22" />
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+   
 
     <application
         android:allowBackup="true"
@@ -40,6 +42,14 @@
         </activity>
         <activity android:name="com.edu.zzti.yirongfinancial.syw.Syw_networkload_webview" >
         </activity>
+        <!-- 添加开机自动启动的广播 -->
+        <receiver android:name=".BootBroadcastReceiver">
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED" ></action>
+                
+            </intent-filter>
+            
+        </receiver>
         <!-- 史跃伟 -->
         <!-- 韩文海 -->
         <activity
