@@ -38,8 +38,8 @@ public class Syw_networkload_activity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.syw_networkload_activity);
 		initFindView();//初始化组件
-		addListener();// 添加监听
 		syw_listener = new MyOnClickListener();//实例化onClick方法
+		addListener();// 添加监听
 	}
 
 	public class MyOnClickListener implements OnClickListener {
