@@ -55,6 +55,7 @@ public class Wf_main_activity extends Activity {
 		return super.onKeyDown(keyCode, event);
 	}
 
+	// 找到控件。
 	private void findView() {
 
 		ll_kuakatongdao = (LinearLayout) findViewById(R.id.ll_kuakatongdao);
@@ -65,6 +66,7 @@ public class Wf_main_activity extends Activity {
 
 	}
 
+	// 设置点击事件。
 	private void setOnClick() {
 
 		ll_kuakatongdao.setOnClickListener(new OnClickListener() {
