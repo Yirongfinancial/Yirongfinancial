@@ -43,8 +43,8 @@
         <activity android:name="com.edu.zzti.yirongfinancial.syw.Syw_networkload_webview" >
         </activity>
         <!-- 添加开机自动启动的广播 -->
-        <receiver android:name=".BootBroadcastReceiver">
-            <intent-filter >
+        <receiver android:name="com.edu.zzti.yirongfinancial.common.BootBroadcastReceiver">
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" ></action>
                 
             </intent-filter>

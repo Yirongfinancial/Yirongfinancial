@@ -1,6 +1,5 @@
 package com.edu.zzti.yirongfinancial.common;
 
-import com.edu.zzti.yirongfinancial.wf.Wf_main_activity;
 import com.edu.zzti.yirongfinancial.wf.Wf_shanping_activity;
 
 import android.content.BroadcastReceiver;
