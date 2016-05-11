@@ -11,8 +11,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-   
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -22,13 +21,17 @@
 
         <!-- 王飞 -->
         <activity
-            android:name="com.edu.zzti.yirongfinancial.wf.Wf_shanping_activity"
+            android:name="com.edu.zzti.yirongfinancial.wf.Wf_login_activity"
             android:label="@string/title_activity_wf_main_activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.edu.zzti.yirongfinancial.wf.Wf_shanping_activity"
+            android:label="@string/title_activity_wf_main_activity" >
         </activity>
         <activity
             android:name="com.edu.zzti.yirongfinancial.wf.Wf_main_activity"
@@ -43,12 +46,11 @@
         <activity android:name="com.edu.zzti.yirongfinancial.syw.Syw_networkload_webview" >
         </activity>
         <!-- 添加开机自动启动的广播 -->
-        <receiver android:name="com.edu.zzti.yirongfinancial.common.BootBroadcastReceiver">
-            <intent-filter android:priority="1000">
-                <action android:name="android.intent.action.BOOT_COMPLETED" ></action>
-                
+        <receiver android:name="com.edu.zzti.yirongfinancial.common.BootBroadcastReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
             </intent-filter>
-            
         </receiver>
         <!-- 史跃伟 -->
         <!-- 韩文海 -->
