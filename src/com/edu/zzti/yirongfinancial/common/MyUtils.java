@@ -21,7 +21,7 @@ public class MyUtils {
 
 	}
 
-	public static StringBuffer getMD5(String password) {
+	public static String getMD5(String password) {
 
 		MessageDigest md5 = null;
 
@@ -41,7 +41,7 @@ public class MyUtils {
 
 			}
 
-			return sb;
+			return sb.toString();
 
 		} catch (NoSuchAlgorithmException e) {
 
