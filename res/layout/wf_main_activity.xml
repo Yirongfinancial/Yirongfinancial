@@ -5,6 +5,7 @@
     tools:context=".Wf_main_activity" >
 
     <LinearLayout
+        android:id="@+id/wf_main_yiemian"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
@@ -19,7 +20,10 @@
                 android:text="@string/wf_yirongjinrong" />
 
             <ImageView
+                android:id="@+id/wf_main_caidan_button"
                 style="@style/wf_title_imageview"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:src="@drawable/wf_ic_item" />
         </RelativeLayout>
 
@@ -190,5 +194,18 @@
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/wf_rl_caidan"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="#1C1C1C" >
+
+        <ListView
+            android:id="@+id/wf_listview_caidan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </ListView>
+    </RelativeLayout>
 
 </RelativeLayout>
