@@ -24,7 +24,7 @@ public class MyMenu {
 	private RelativeLayout rl_caidan;
 	private ListView listview_caidan;
 
-	private int windowWidth;
+	private int width;
 
 	private final int CAIDAN_OFF = 0;
 	private final int CAIDAN_ON = 1;
@@ -51,10 +51,10 @@ public class MyMenu {
 
 		getWindowWidth();
 
-		layoutParams = new RelativeLayout.LayoutParams(windowWidth / 2,
+		layoutParams = new RelativeLayout.LayoutParams(width / 2,
 				LayoutParams.MATCH_PARENT);
 
-		layoutParams.setMargins(windowWidth, 0, 0, 0);
+		layoutParams.setMargins(width, 0, 0, 0);
 
 		rl_caidan.setLayoutParams(layoutParams);
 
@@ -64,7 +64,9 @@ public class MyMenu {
 
 	private void getWindowWidth() {
 
-		windowWidth = wm.getDefaultDisplay().getWidth();
+		int windowWidth = wm.getDefaultDisplay().getWidth();
+
+		width = windowWidth;
 
 	}
 
@@ -77,9 +79,9 @@ public class MyMenu {
 
 				if (caidan == CAIDAN_OFF) {
 
-					yemian.scrollTo(windowWidth / 2, 0);
+					yemian.scrollTo(width / 2, 0);
 
-					layoutParams.setMargins(windowWidth / 2, 0, 0, 0);
+					layoutParams.setMargins(width / 2, 0, 0, 0);
 
 					rl_caidan.setLayoutParams(layoutParams);
 
@@ -89,7 +91,7 @@ public class MyMenu {
 
 					yemian.scrollTo(0, 0);
 
-					layoutParams.setMargins(windowWidth, 0, 0, 0);
+					layoutParams.setMargins(width, 0, 0, 0);
 
 					rl_caidan.setLayoutParams(layoutParams);
 
