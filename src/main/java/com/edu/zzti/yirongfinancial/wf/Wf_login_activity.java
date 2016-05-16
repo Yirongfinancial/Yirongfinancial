@@ -49,10 +49,11 @@ public class Wf_login_activity extends Activity {
 
     public void login(View v) {
 
+        String imei = MyUtils.getIMEI(getApplicationContext());
         String name = login_name.getText().toString().trim();
         String pass = MyUtils.getMD5(login_pass.getText().toString().trim());
 
-        if (name.equals("") || pass.equals("")) {
+        if (name.equals("") || pass.equals(MyUtils.getMD5(""))) {
 
             Toast.makeText(getApplicationContext(), "账号密码输入有误", Toast.LENGTH_SHORT).show();
 
@@ -72,34 +73,22 @@ public class Wf_login_activity extends Activity {
 
                 for (User user : userList) {
 
-                    if (user.getImei().equals("000000000000000")) {
-                        //  判断是否第一次登录。
+                    String userImei = user.getImei();
+                    String userName = user.getName();
+                    String userPass = user.getPass();
 
-                        if (name.equals(user.getName()) && pass.equals(user.getPass())) {
-                            //  账号密码正确。登录。
+                    if (name.equals(userName)) {
+                        //  账号存在。
 
-                            startActivity(new Intent(getApplicationContext(), Wf_shanping_activity.class));
+                        if (userImei.equals("000000000000000")) {
+                            //  该账号第一次登录。
 
-                            finish();
-
-                            return;
-
-                        }
-
-                    } else {
-                        //  不是第一次登录。
-
-                        if (user.getImei().equals(MyUtils.getIMEI(getApplicationContext()))) {
-                            //  是绑定的设备。
-
-                            if (name.equals(user.getName()) && name.equals(user.getPass())) {
-                                //  账号密码正确。登录。
+                            if (name.equals(userName) && pass.equals(userPass)) {
+                                //  登录成功。
 
                                 startActivity(new Intent(getApplicationContext(), Wf_shanping_activity.class));
 
                                 finish();
-
-                                return;
 
                             } else {
 
@@ -107,19 +96,42 @@ public class Wf_login_activity extends Activity {
 
                             }
 
-
                         } else {
+                            //  该账号有绑定的设备。
 
-                            Toast.makeText(getApplicationContext(), "请在该账号绑定的设备登录", Toast.LENGTH_SHORT).show();
+                            if (imei.equals(userImei)) {
+                                //  该设备是该账号绑定的设备。
+
+                                if (name.equals(userName) && pass.equals(userPass)) {
+                                    //  登录成功。
+
+                                    startActivity(new Intent(getApplicationContext(), Wf_shanping_activity.class));
+
+                                    finish();
+
+                                } else {
+
+                                    Toast.makeText(getApplicationContext(), "账号密码不匹配", Toast.LENGTH_SHORT).show();
+
+                                }
+
+
+                            } else {
+                                //  该设备不是该账号绑定的设备。
+
+                                Toast.makeText(getApplicationContext(), "请在该账号绑定的设备上登录", Toast.LENGTH_SHORT).show();
+
+                            }
 
                         }
 
+                        return;
 
                     }
 
                 }
 
-                Toast.makeText(getApplicationContext(), "账号密码不匹配", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "账号不存在", Toast.LENGTH_SHORT).show();
 
             }
 
