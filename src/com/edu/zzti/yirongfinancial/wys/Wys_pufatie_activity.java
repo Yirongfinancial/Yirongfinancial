@@ -18,7 +18,7 @@ public class Wys_pufatie_activity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.wys_pufatie);
+		setContentView(R.layout.wys_pufatie_activity);
 	}
 	public void pufaback(View v){
 		finish();

@@ -1,10 +1,9 @@
-﻿package com.edu.zzti.yirongfinancial.common;
+package com.edu.zzti.yirongfinancial.common;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.net.http.SslError;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -72,6 +71,17 @@ public class CommonWebView extends Activity {
 		iv_back = (ImageView) findViewById(R.id.iv_back);
 	}
 
+	// 由于WebView中当点击键盘上的“返回”键时，直接调用浏览器的“finish()”方法退出浏览器
+	// 为避免这种情况，“返回”仅是返回浏览器的上一个界面，重写onKeyDown()方法
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
+			mWebView.goBack();
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
 	private class MyWebViewClient extends WebViewClient {
 
 		// 使用WebView加载url，而不是跳转到浏览器
@@ -97,17 +107,6 @@ public class CommonWebView extends Activity {
 
 			super.onReceivedError(view, errorCode, description, failingUrl);
 		}
-	}
-
-	// 由于WebView中当点击键盘上的“返回”键时，直接调用浏览器的“finish()”方法退出浏览器
-	// 为避免这种情况，“返回”仅是返回浏览器的上一个界面，重写onKeyDown()方法
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK && mWebView.canGoBack()) {
-			mWebView.goBack();
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
 	}
 
 }
