@@ -1,5 +1,10 @@
 package com.edu.zzti.yirongfinancial.wf;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.edu.zzti.yirongfinancial.common.MyUtils;
+import com.edu.zzti.yirongfinancial.common.NetWork;
 import com.edu.zzti.yirongfinancial.syw.R;
 
 import android.app.Activity;
@@ -15,12 +20,55 @@ public class Wf_login_activity extends Activity {
 	private EditText login_name;
 	private EditText login_pass;
 
+	private List<User> userList;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.wf_login_activity);
 
+		userList = new ArrayList<User>();
+
 		findView();
+
+		if (NetWork.isNetWorkConnected(getApplicationContext())) {
+
+			Toast.makeText(getApplicationContext(), "请先开启网络", Toast.LENGTH_LONG)
+					.show();
+
+			finish();
+
+		} else {
+
+			new Thread() {
+				public void run() {
+
+					if (MyHttp.getUser()) {
+
+						userList = MyHttp.readUser(MyUtils
+								.getIMEI(getApplicationContext()));
+
+					} else {
+
+						runOnUiThread(new Runnable() {
+
+							@Override
+							public void run() {
+
+								Toast.makeText(getApplicationContext(), "服务器忙",
+										Toast.LENGTH_LONG).show();
+
+								return;
+
+							}
+						});
+
+					}
+
+				};
+			}.start();
+
+		}
 
 	}
 
@@ -33,10 +81,59 @@ public class Wf_login_activity extends Activity {
 
 	public void login(View v) {
 
-		startActivity(new Intent(getApplicationContext(),
-				Wf_shanping_activity.class));
+		if (!userList.equals(null)) {
 
-		finish();
+			int i = 0;
+
+			User user = new User();
+
+			while (MyUtils.getIMEI(getApplicationContext()).equals(
+					userList.get(i).getImei())) {
+
+				user.setImei(userList.get(i).getImei());
+				user.setName(userList.get(i).getName());
+				user.setPass(userList.get(i).getPass());
+
+				i += 1;
+
+			}
+
+			i -= 1;
+
+			if (!user.equals(null)) {
+
+				String name = login_name.getText().toString().trim();
+				String pass = MyUtils.getMD5(login_pass.getText().toString()
+						.trim());
+
+				if (name.equals(userList.get(i).getName())
+						&& pass.equals(userList.get(i).getPass())) {
+
+					startActivity(new Intent(getApplicationContext(),
+							Wf_shanping_activity.class));
+
+					finish();
+
+				} else {
+
+					Toast.makeText(getApplicationContext(), "账号密码不匹配",
+							Toast.LENGTH_LONG).show();
+
+				}
+
+			} else {
+				// 第一次登录。
+
+			}
+
+		} else {
+
+			Toast.makeText(getApplicationContext(), "服务器忙", Toast.LENGTH_LONG)
+					.show();
+
+			return;
+
+		}
 
 	}
 
