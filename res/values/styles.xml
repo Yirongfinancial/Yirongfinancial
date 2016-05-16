@@ -105,11 +105,6 @@
     <!-- 韩文海 -->
     <!-- 王义升 -->
 
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-
-    </style>
-
     <style name="tabel_textview">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
