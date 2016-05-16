@@ -1,10 +1,14 @@
 package com.edu.zzti.yirongfinancial.wf;
 
-public class User {
+public class MyUser {
 
 	private String imei;
 	private String name;
 	private String pass;
+
+	public MyUser() {
+
+	}
 
 	public String getImei() {
 		return imei;
