@@ -1,28 +1,33 @@
 package com.edu.zzti.yirongfinancial.wf;
 
+import android.content.Context;
+
+import com.edu.zzti.yirongfinancial.common.MyUtils;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyHttp {
 
-    public static MyUser getUser() {
+    private static List<User> userList;
 
-        return null;
-        
-    }
+    public static List<User> readUsers() {
 
-    private List<MyUser> readUser() {
+        userList = new ArrayList<User>();
 
-        return null;
 
-    }
 
-    private boolean setUsers() {
-
-        return false;
+        return userList;
 
     }
 
-    private boolean getUsers() {
+    private static boolean getUsers() {
+
+        return true;
+
+    }
+
+    public static boolean setUsers() {
 
         return false;
 
