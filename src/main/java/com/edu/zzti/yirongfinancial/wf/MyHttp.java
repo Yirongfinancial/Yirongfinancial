@@ -1,18 +1,30 @@
+package com.edu.zzti.yirongfinancial.wf;
+
+import java.util.List;
+
 public class MyHttp {
 
-    public static User getUser() {
+    public static MyUser getUser() {
 
+        return null;
+        
     }
 
-    private Lise<User> readUser() {
+    private List<MyUser> readUser() {
+
+        return null;
 
     }
 
     private boolean setUsers() {
 
+        return false;
+
     }
 
     private boolean getUsers() {
+
+        return false;
 
     }
 
