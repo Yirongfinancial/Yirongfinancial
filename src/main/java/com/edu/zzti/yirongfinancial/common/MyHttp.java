@@ -1,7 +1,9 @@
-package com.edu.zzti.yirongfinancial.wf;
+package com.edu.zzti.yirongfinancial.common;
 
 import android.os.Message;
 import android.util.Xml;
+
+import com.edu.zzti.yirongfinancial.wf.Wf_login_activity;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlSerializer;

@@ -1,4 +1,4 @@
-package com.edu.zzti.yirongfinancial.wf;
+package com.edu.zzti.yirongfinancial.common;
 
 public class User {
 
