@@ -1,10 +1,10 @@
 package com.edu.zzti.yirongfinancial.wf;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import android.os.Handler;
+
 import com.edu.zzti.yirongfinancial.common.MyUtils;
-import com.edu.zzti.yirongfinancial.common.NetWork;
 import com.edu.zzti.yirongfinancial.syw.R;
 
 import android.app.Activity;
@@ -21,6 +21,25 @@ public class Wf_login_activity extends Activity {
     private EditText login_pass;
 
     private List<User> userList;
+
+    private static int isLogin = 1;
+
+    private static final int ISLOGIN_ON = 0;
+    private static final int ISLOGIN_OFF = 0;
+
+    public static Handler handler = new Handler() {
+
+        public void handleMessage(android.os.Message msg) {
+
+            if (msg.arg1 == 1) {
+
+                isLogin = ISLOGIN_ON;
+
+            }
+
+        }
+
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,9 +105,17 @@ public class Wf_login_activity extends Activity {
                             if (name.equals(userName) && pass.equals(userPass)) {
                                 //  登录成功。
 
-                                startActivity(new Intent(getApplicationContext(), Wf_shanping_activity.class));
+                                if (MyHttp.saveUser(imei, name, pass)) {
 
-                                finish();
+                                    startActivity(new Intent(getApplicationContext(), Wf_shanping_activity.class));
+
+                                    finish();
+
+                                } else {
+
+                                    Toast.makeText(getApplicationContext(), "服务器异常", Toast.LENGTH_SHORT).show();
+
+                                }
 
                             } else {
 
@@ -128,6 +155,14 @@ public class Wf_login_activity extends Activity {
                         return;
 
                     }
+
+                }
+
+                if (isLogin == ISLOGIN_ON) {
+
+                    Toast.makeText(getApplicationContext(), "该设备已有账号绑定", Toast.LENGTH_SHORT).show();
+
+                    return;
 
                 }
 

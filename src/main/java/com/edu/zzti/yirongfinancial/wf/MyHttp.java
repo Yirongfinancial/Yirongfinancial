@@ -1,8 +1,10 @@
 package com.edu.zzti.yirongfinancial.wf;
 
+import android.os.Message;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlSerializer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,19 +28,140 @@ public class MyHttp {
 
         List<User> userList = new ArrayList<User>();
 
+        if (new File(userSavaPath, userSavaName).exists()) {
+
+            Message msg = new Message();
+
+            msg.arg1 = 1;
+
+            Wf_login_activity.handler.sendMessage(msg);
+
+            userList = readXML(userSavaName);
+
+        } else {
+
+            if (downUsers()) {
+
+                userList = readXML(usersSavaName);
+
+            }
+
+        }
+
         return userList;
 
     }
 
-    private static List<User> readXML() {
+    private static List<User> readXML(String xmlName) {
 
         List<User> userList = new ArrayList<User>();
 
+        XmlPullParser parser = Xml.newPullParser();
+
+        try {
+
+            FileInputStream in = new FileInputStream(new File(usersSavaPath,
+                    xmlName));
+
+            parser.setInput(in, "utf-8");
+
+            int type = parser.getEventType();
+
+            User user = null;
+
+            while (type != XmlPullParser.END_DOCUMENT) {
+
+                switch (type) {
+                    case XmlPullParser.START_TAG:
+
+                        if ("user".equals(parser.getName())) {
+
+                            user = new User();
+
+                        } else if ("imei".equals(parser.getName())) {
+
+                            user.setImei(parser.nextText());
+
+                        } else if ("name".equals(parser.getName())) {
+
+                            user.setName(parser.nextText());
+
+                        } else if ("pass".equals(parser.getName())) {
+
+                            user.setPass(parser.nextText());
+
+                        }
+
+                        break;
+
+                    case XmlPullParser.END_TAG:
+
+                        if ("user".equals(parser.getName())) {
+
+                            userList.add(user);
+
+                        }
+
+                }
+
+                type = parser.next();
+
+            }
+
+            in.close();
+
+            return userList;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return userList;
 
     }
 
-    public static boolean saveUserSp() {
+    public static boolean saveUser(String imei, String name, String pass) {
+
+        XmlSerializer serializer = Xml.newSerializer();
+
+        try {
+
+            FileOutputStream fos = new FileOutputStream(new File(userSavaPath,
+                    userSavaName));
+
+            serializer.setOutput(fos, "utf-8");
+
+            serializer.startDocument("utf-8", true);
+
+            serializer.startTag(null, "users");
+
+            serializer.startTag(null, "user");
+
+            serializer.startTag(null, "imei");
+            serializer.text(imei);
+            serializer.endTag(null, "imei");
+
+            serializer.startTag(null, "name");
+            serializer.text(name);
+            serializer.endTag(null, "name");
+
+            serializer.startTag(null, "pass");
+            serializer.text(pass);
+            serializer.endTag(null, "pass");
+
+            serializer.endTag(null, "user");
+
+            serializer.endTag(null, "users");
+
+            serializer.endDocument();
+
+            fos.close();
+
+            return true;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return false;
 
