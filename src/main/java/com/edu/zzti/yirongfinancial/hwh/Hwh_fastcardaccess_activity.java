@@ -101,7 +101,7 @@ public class Hwh_fastcardaccess_activity extends Activity {
 				tiaoZhuan(web,title);
 				break;
 			case R.id.ll_pingan://平安银行
-				web="https://c.pingan.com/apply/mobile/apply/index.html?scc=920000210&ccp=9a1a2a3a4a5a8a10a11a12a13&xl=01a02a03a04a05&showt=0#mainPage";
+				web="https://c.pingan.com/apply/newpublic/new_apply/index.html#mainPage";
 				title="平安银行";
 				tiaoZhuan(web,title);
 				break;
