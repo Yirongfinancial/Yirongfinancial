@@ -27,13 +27,6 @@ android {
     compileSdkVersion 23
     // build tools的版本
     buildToolsVersion "23.0.3"
-    defaultConfig {
-        // 应用的包名
-        applicationId "com.edu.zzti.yirongfinancial.syw"
-        minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0.0"
-    }
+
 
 }
