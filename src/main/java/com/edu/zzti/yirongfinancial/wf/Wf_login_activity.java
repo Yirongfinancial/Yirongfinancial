@@ -1,10 +1,12 @@
 package com.edu.zzti.yirongfinancial.wf;
 
+import java.io.IOException;
 import java.util.List;
 
 import android.os.Handler;
 
 import com.edu.zzti.yirongfinancial.common.MyHttp;
+import com.edu.zzti.yirongfinancial.common.MyQiNiu;
 import com.edu.zzti.yirongfinancial.common.MyUtils;
 import com.edu.zzti.yirongfinancial.common.User;
 import com.edu.zzti.yirongfinancial.syw.R;
@@ -27,13 +29,13 @@ public class Wf_login_activity extends Activity {
     private static int isLogin = 1;
 
     private static final int ISLOGIN_ON = 0;
-    private static final int ISLOGIN_OFF = 0;
+    private static final int ISLOGIN_OFF = 1;
 
     public static Handler handler = new Handler() {
 
         public void handleMessage(android.os.Message msg) {
 
-            if (msg.arg1 == 1) {
+            if (msg.arg1 == ISLOGIN_OFF) {
 
                 isLogin = ISLOGIN_ON;
 
@@ -101,13 +103,21 @@ public class Wf_login_activity extends Activity {
                     if (name.equals(userName)) {
                         //  账号存在。
 
-                        if (userImei.equals("000000000000000")) {
+                        if ((!MyHttp.isExists(name)) && userImei.equals("000000000000000")) {
                             //  该账号第一次登录。
 
                             if (name.equals(userName) && pass.equals(userPass)) {
                                 //  登录成功。
 
                                 if (MyHttp.saveUser(imei, name, pass)) {
+
+                                    MyQiNiu myQiNiu = new MyQiNiu(name);
+
+                                    try {
+                                        myQiNiu.upload();
+                                    } catch (Exception e) {
+                                        e.printStackTrace();
+                                    }
 
                                     startActivity(new Intent(getApplicationContext(), Wf_shanping_activity.class));
 
