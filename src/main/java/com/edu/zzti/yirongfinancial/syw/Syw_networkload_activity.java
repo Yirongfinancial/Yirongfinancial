@@ -11,7 +11,6 @@ import java.util.Properties;
 
 import com.edu.zzti.yirongfinancial.common.CommonWebView;
 import com.edu.zzti.yirongfinancial.common.PropertiesUtil;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;

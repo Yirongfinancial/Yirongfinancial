@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Wf_main_activity" >
+     >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                            
                             android:id="@+id/zhongxin"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/zxymj" />
+                            android:src="@drawable/wf_kuakatongdao" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -98,7 +98,7 @@
                         <ImageView
                             android:id="@+id/pingan"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/paph" />
+                            android:src="@drawable/wf_bankajindu" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -115,7 +115,7 @@
                         <ImageView
                             android:id="@+id/zhifupay"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/zfbd" />
+                            android:src="@drawable/wf_wangluoxiaodai" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -129,7 +129,7 @@
                         <ImageView
                             android:id="@+id/paipaiload"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/ppd" />
+                            android:src="@drawable/wf_guanfangwangzhan" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -143,7 +143,7 @@
                         <ImageView
                             android:id="@+id/youme"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/nwd" />
+                            android:src="@drawable/wf_jishujiemi" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -160,7 +160,7 @@
                         <ImageView
                             android:id="@+id/yiren"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/yrd" />
+                            android:src="@drawable/wf_zhengxinchaxun" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -205,7 +205,7 @@
                         <ImageView
                             android:id="@+id/renxing"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/rxf" />
+                            android:src="@drawable/wf_zhengxinchaxun" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -219,7 +219,7 @@
                         <ImageView
                             android:id="@+id/jingd"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/jdbt" />
+                            android:src="@drawable/wf_gerenzhongxin" />
 
                         <TextView
                             style="@style/wf_item_textview"
@@ -233,7 +233,7 @@
                         <ImageView
                             android:id="@+id/zhaolian"
                             style="@style/wf_item_imageview"
-                            android:src="@drawable/hqd" />
+                            android:src="@drawable/wf_chanpinjieshao" />
 
                         <TextView
                             style="@style/wf_item_textview"
