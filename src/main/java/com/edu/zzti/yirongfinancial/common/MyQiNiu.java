@@ -1,12 +1,12 @@
 package com.edu.zzti.yirongfinancial.common;
 
-import com.qiniu.http.Response;
-import com.qiniu.util.Auth;
+import com.edu.zzti.yirongfinancial.qiniu.http.Response;
+import com.edu.zzti.yirongfinancial.qiniu.util.Auth;
 
 import java.io.IOException;
 
-import com.qiniu.common.QiniuException;
-import com.qiniu.storage.UploadManager;
+import com.edu.zzti.yirongfinancial.qiniu.common.QiniuException;
+import com.edu.zzti.yirongfinancial.qiniu.storage.UploadManager;
 
 /**
  * Created by wangfei on 16/5/18.
@@ -52,7 +52,7 @@ public class MyQiNiu {
     public void upload() throws IOException {
         try {
             //调用put方法上传
-            com.qiniu.http.Response res = uploadManager.put(FilePath, key, getUpToken());
+            com.edu.zzti.yirongfinancial.qiniu.http.Response res = uploadManager.put(FilePath, key, getUpToken());
             //打印返回的信息
             System.out.println(res.bodyString());
         } catch (QiniuException e) {
