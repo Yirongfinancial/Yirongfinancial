@@ -6,7 +6,6 @@ import java.util.List;
 import android.os.Handler;
 
 import com.edu.zzti.yirongfinancial.common.MyHttp;
-import com.edu.zzti.yirongfinancial.common.MyQiNiu;
 import com.edu.zzti.yirongfinancial.common.MyUtils;
 import com.edu.zzti.yirongfinancial.common.User;
 import com.edu.zzti.yirongfinancial.syw.R;
@@ -72,8 +71,17 @@ public class Wf_login_activity extends Activity {
 
     public void login(View v) {
 
+        new Thread() {
+            @Override
+            public void run() {
+
+                userList = MyHttp.readUsers();
+
+            }
+        }.start();
+
         String imei = MyUtils.getIMEI(getApplicationContext());
-        String name = login_name.getText().toString().trim();
+        final String name = login_name.getText().toString().trim();
         String pass = MyUtils.getMD5(login_pass.getText().toString().trim());
 
         if (name.equals("") || pass.equals(MyUtils.getMD5(""))) {
@@ -111,10 +119,10 @@ public class Wf_login_activity extends Activity {
 
                                 if (MyHttp.saveUser(imei, name, pass)) {
 
-                                    MyQiNiu myQiNiu = new MyQiNiu(name);
-
                                     try {
-                                        myQiNiu.upload();
+
+                                        //  上传逻辑。
+
                                     } catch (Exception e) {
                                         e.printStackTrace();
                                     }
@@ -137,6 +145,24 @@ public class Wf_login_activity extends Activity {
 
                         } else {
                             //  该账号有绑定的设备。
+
+                            if (MyHttp.down(name)) {
+
+                                List<User> list = MyHttp.readXML(name);
+
+                                User userx = list.get(0);
+
+                                userImei = userx.getImei();
+                                userName = userx.getName();
+                                userPass = userx.getPass();
+
+                            } else {
+
+                                Toast.makeText(getApplicationContext(), "服务器忙", Toast.LENGTH_SHORT).show();
+
+                                return;
+
+                            }
 
                             if (imei.equals(userImei)) {
                                 //  该设备是该账号绑定的设备。

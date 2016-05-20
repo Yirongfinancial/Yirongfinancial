@@ -1,6 +1,7 @@
 package com.edu.zzti.yirongfinancial.common;
 
 import android.os.Message;
+import android.os.SystemClock;
 import android.util.Xml;
 
 import com.edu.zzti.yirongfinancial.wf.Wf_login_activity;
@@ -13,9 +14,13 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import android.os.Handler;
+
 
 public class MyHttp {
 
@@ -23,16 +28,18 @@ public class MyHttp {
     private static String upPath = "http://7xu2vf.com1.z0.glb.clouddn.com/";
 
     private static String usersSavaPath = "data/data/com.edu.zzti.yirongfinancial.syw";
-    private static String usersSavaName = "users.xml";
+    private static String usersSavaName = "users";
 
     private static String userSavaPath = "data/data/com.edu.zzti.yirongfinancial.syw";
-    private static String userSavaName = "user.xml";
+    private static String userSavaName = "user";
+
+    private static boolean b = false;
 
     public static List<User> readUsers() {
 
         List<User> userList = new ArrayList<User>();
 
-        if (new File(userSavaPath, userSavaName).exists()) {
+        if (new File(userSavaPath, userSavaName + ".xml").exists()) {
 
             Message msg = new Message();
 
@@ -56,7 +63,7 @@ public class MyHttp {
 
     }
 
-    private static List<User> readXML(String xmlName) {
+    public static List<User> readXML(String xmlName) {
 
         List<User> userList = new ArrayList<User>();
 
@@ -65,7 +72,7 @@ public class MyHttp {
         try {
 
             FileInputStream in = new FileInputStream(new File(usersSavaPath,
-                    xmlName));
+                    xmlName + ".xml"));
 
             parser.setInput(in, "utf-8");
 
@@ -131,7 +138,7 @@ public class MyHttp {
         try {
 
             FileOutputStream fos = new FileOutputStream(new File(userSavaPath,
-                    userSavaName));
+                    userSavaName + ".xml"));
 
             serializer.setOutput(fos, "utf-8");
 
@@ -185,7 +192,7 @@ public class MyHttp {
 
                 InputStream in = conn.getInputStream();
 
-                File usersSavaFile = new File(usersSavaPath, usersSavaName);
+                File usersSavaFile = new File(usersSavaPath, usersSavaName + ".xml");
 
                 FileOutputStream fos = new FileOutputStream(usersSavaFile);
 
@@ -215,22 +222,99 @@ public class MyHttp {
 
     }
 
-    public static boolean isExists(String name) {
+    public static boolean down(final String name) {
 
-        try {
 
-            HttpURLConnection conn = (HttpURLConnection) new URL(upPath + name + ".txt").openConnection();
+        new Thread() {
+            @Override
+            public void run() {
 
-            conn.setConnectTimeout(3000);
+                URL url = null;
+                try {
+                    url = new URL("http://7xu2vf.com1.z0.glb.clouddn.com/" + name + ".xml");
 
-            if (conn.getResponseCode() == 200) {
 
-                return true;
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                    conn.setConnectTimeout(3000);
+
+                    if (conn.getResponseCode() == 200) {
+
+                        InputStream in = conn.getInputStream();
+
+                        File savaFile = new File("data/data/com.edu.zzti.yirongfinancial.syw", name + ".xml");
+
+                        FileOutputStream fos = new FileOutputStream(savaFile);
+
+                        int len = -1;
+                        byte[] buffer = new byte[100];
+
+                        while ((len = in.read(buffer)) != -1) {
+
+                            fos.write(buffer, 0, len);
+
+                        }
+
+                        fos.close();
+                        in.close();
+
+                        return;
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
             }
+        }.start();
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        SystemClock.sleep(500);
+
+        if (new File("data/data/com.edu.zzti.yirongfinancial.syw", name + ".xml").exists()) {
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
+    public static boolean isExists(final String name) {
+
+        new Thread() {
+            @Override
+            public void run() {
+
+                try {
+
+                    URL url = new URL("http://7xu2vf.com1.z0.glb.clouddn.com/" + name + ".xml");
+
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+                    conn.setConnectTimeout(3000);
+
+                    if (conn.getResponseCode() == 200) {
+
+                        b = true;
+
+                        return;
+
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }.start();
+
+        SystemClock.sleep(500);
+
+        if (b) {
+
+            return true;
+
         }
 
         return false;
