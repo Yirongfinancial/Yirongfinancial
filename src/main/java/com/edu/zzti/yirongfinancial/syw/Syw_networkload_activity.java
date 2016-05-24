@@ -104,7 +104,7 @@ public class Syw_networkload_activity extends Activity {
 	public void zhaoLianMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			zhaoliantitle = proEnCoding
 					.getProperty(p, "zhaoliantitle", "UTF-8");
 			zhaoliannet = p.getProperty("zhaoliannet");
@@ -119,7 +119,7 @@ public class Syw_networkload_activity extends Activity {
 	public void jingdMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			jingdtitle = proEnCoding.getProperty(p, "jingdtitle", "UTF-8");
 			jingdnet = p.getProperty("jingdnet");
 			title = jingdtitle;
@@ -133,7 +133,7 @@ public class Syw_networkload_activity extends Activity {
 	public void renXingMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			renxingtitle = proEnCoding.getProperty(p, "renxingtitle", "UTF-8");
 			renxingnet = p.getProperty("renxingnet");
 			title = renxingtitle;
@@ -147,7 +147,7 @@ public class Syw_networkload_activity extends Activity {
 	public void jianHangMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			jianhangtitle = proEnCoding
 					.getProperty(p, "jianhangtitle", "UTF-8");
 			jianhangnet = p.getProperty("jianhangnet");
@@ -162,7 +162,7 @@ public class Syw_networkload_activity extends Activity {
 	public void puFaMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			pufatitle = proEnCoding.getProperty(p, "pufatitle", "UTF-8");
 			pufanet = p.getProperty("pufanet");
 			title = pufatitle;
@@ -176,7 +176,7 @@ public class Syw_networkload_activity extends Activity {
 	public void yiRenMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			yirentitle = proEnCoding.getProperty(p, "yirentitle", "UTF-8");
 			yirennet = p.getProperty("yirennet");
 			title = yirentitle;
@@ -190,7 +190,7 @@ public class Syw_networkload_activity extends Activity {
 	public void youMeMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			youmetitle = proEnCoding.getProperty(p, "youmetitle", "UTF-8");
 			youmenet = p.getProperty("youmenet");
 			title = youmetitle;
@@ -204,7 +204,7 @@ public class Syw_networkload_activity extends Activity {
 	public void paiPaiLoadMrthod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			paipailoadtitle = proEnCoding.getProperty(p, "paipailoadtitle",
 					"UTF-8");
 			paipailoadnet = p.getProperty("paipailoadnet");
@@ -219,7 +219,7 @@ public class Syw_networkload_activity extends Activity {
 	public void zhiFuPayMrthod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			zhifupaytitle = proEnCoding
 					.getProperty(p, "zhifupaytitle", "UTF-8");
 			zhifupaynet = p.getProperty("zhifupaynet");
@@ -234,7 +234,7 @@ public class Syw_networkload_activity extends Activity {
 	public void pingAnMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			pingantitle = proEnCoding.getProperty(p, "pingantitle", "UTF-8");
 			pingannet = p.getProperty("pingannet");
 			title = pingantitle;
@@ -249,7 +249,7 @@ public class Syw_networkload_activity extends Activity {
 	public void leXiangMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			lexiangtitle = proEnCoding.getProperty(p, "lexiangtitle", "UTF-8");
 			lexiangnet = p.getProperty("zhongxinnet");
 			title = lexiangtitle;
@@ -263,7 +263,7 @@ public class Syw_networkload_activity extends Activity {
 	public void zhongXinMethod() {
 		try {
 			p.load(Syw_networkload_activity.this.getAssets().open(
-					"net.properties"));
+					"netLoad.properties"));
 			zhognxintitle = proEnCoding
 					.getProperty(p, "zhongxintitle", "UTF-8");
 			zhongxinnet = p.getProperty("zhongxinnet");
