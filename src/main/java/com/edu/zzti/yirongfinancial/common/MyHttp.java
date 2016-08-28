@@ -24,11 +24,11 @@ import android.os.Handler;
 
 public class MyHttp {
 
-    private static String downPath = "http://7xu2vf.com1.z0.glb.clouddn.com/users.xml";
+    private static String downPath = "http://7xu2vf.com1.z0.glb.clouddn.com/userss.xml";
     private static String upPath = "http://7xu2vf.com1.z0.glb.clouddn.com/";
 
     private static String usersSavaPath = "data/data/com.edu.zzti.yirongfinancial.syw";
-    private static String usersSavaName = "users";
+    private static String usersSavaName = "userss";
 
     private static String userSavaPath = "data/data/com.edu.zzti.yirongfinancial.syw";
     private static String userSavaName = "user";
