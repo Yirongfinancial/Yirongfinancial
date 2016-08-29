@@ -3,6 +3,7 @@ package com.edu.zzti.yirongfinancial.wf;
 import com.edu.zzti.yirongfinancial.common.MyLever;
 import com.edu.zzti.yirongfinancial.common.MyMenu;
 import com.edu.zzti.yirongfinancial.hwh.Hwh_fastcardaccess_activity;
+import com.edu.zzti.yirongfinancial.hwh.Hwh_fastcardaccess_activity_Refactoring;
 import com.edu.zzti.yirongfinancial.lkw.Lkw_credit_activity;
 import com.edu.zzti.yirongfinancial.syw.R;
 import com.edu.zzti.yirongfinancial.syw.Syw_networkload_activity;
