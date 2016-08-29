@@ -55,7 +55,7 @@ public class Hwh_fastcardaccess_activity extends Activity {
 			String title;
 			switch (v.getId()) {
 			case R.id.ll_jiaotong://交通银行
-				web="https://creditcardapp.bankcomm.com/applynew/front/apply/new/index.html?trackCode=A123010564295&recomType=01&recomNumber=13213140060&commercial_id=null";
+				web="https://creditcardapp.bankcomm.com/applynew/front/apply/new/index.html?trackCode=A123010564295&commercial_id=null";
 				title="交通银行";
 				tiaoZhuan(web,title);
 				break;
